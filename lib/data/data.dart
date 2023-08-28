@@ -1,0 +1,68 @@
+import '../model/car.dart';
+
+List<Car> listCar = [
+  Car(
+    id: 0,
+    year: 1953,
+    yearUntil: 1962,
+    name: 'Chevrolet Corvette C1',
+    mainImage: 'images/Corvette1953-62.png',
+    logo: 'images/logo1953-62.png',
+  ),
+  Car(
+    id: 1,
+    year: 1963,
+    yearUntil: 1967,
+    name: 'Chevrolet Corvette C2',
+    mainImage: 'images/Corvette1963-67.png',
+    logo: 'images/logo1963-67.png',
+  ),
+  Car(
+    id: 2,
+    year: 1968,
+    yearUntil: 1982,
+    name: 'Chevrolet Corvette C3',
+    mainImage: 'images/Corvette1968-82.png',
+    logo: 'images/logo1968-82.png',
+  ),
+  Car(
+    id: 3,
+    year: 1983,
+    yearUntil: 1996,
+    name: 'Chevrolet Corvette C4',
+    mainImage: 'images/Corvette1983-96.png',
+    logo: 'images/logo1983-96.png',
+  ),
+  Car(
+    id: 4,
+    year: 1997,
+    yearUntil: 2004,
+    name: 'Chevrolet Corvette C5',
+    mainImage: 'images/Corvette1997-04.png',
+    logo: 'images/logo1997-04.png',
+  ),
+  Car(
+    id: 5,
+    year: 2005,
+    yearUntil: 2013,
+    name: 'Chevrolet Corvette C6',
+    mainImage: 'images/Corvette2005-13.png',
+    logo: 'images/logo2005-13.png',
+  ),
+  Car(
+    id: 6,
+    year: 2014,
+    yearUntil: 2019,
+    name: 'Chevrolet Corvette C7',
+    mainImage: 'images/Corvette2014-19.png',
+    logo: 'images/logo2014-19.png',
+  ),
+  Car(
+    id: 7,
+    year: 2020,
+    yearUntil: 2023,
+    name: 'Chevrolet Corvette C8',
+    mainImage: 'images/Corvette2020-23.png',
+    logo: 'images/logo2020-23.png',
+  ),
+];
