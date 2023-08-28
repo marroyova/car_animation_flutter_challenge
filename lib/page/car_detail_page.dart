@@ -22,7 +22,6 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
   @override
   void initState() {
     super.initState();
-    //final size = MediaQuery.of(context).size;
 
     controller = AnimationController(
       vsync: this,
@@ -67,7 +66,6 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
                   colors: const [Colors.white, Colors.black],
                   stops: [controller.value, controller.value],
                 ),
-                //color: color,
               ),
               //child: child,
               child: Padding(
@@ -118,7 +116,6 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
                         child: Image(
                           image: AssetImage(widget.car.mainImage),
                           fit: BoxFit.cover,
-                          //width: size.width * .9,
                         ),
                       ),
                     ),
@@ -148,7 +145,6 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
                         fit: BoxFit.cover,
                       ),
                     ),
-                    //const SizedBox(height: 25.0),
                     Text(
                       widget.car.name,
                       style: GoogleFonts.gelasio(

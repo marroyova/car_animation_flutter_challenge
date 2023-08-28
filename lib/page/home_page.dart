@@ -39,7 +39,7 @@ class HomePageState extends ConsumerState<HomePage>
         transitionsBuilder: (BuildContext context, Animation<double> animation,
             Animation<double> secondaryAnimation, Widget child) {
           final begin = Offset(0.0, MediaQuery.of(context).size.height / 3.5);
-          const end = Offset(0.0, 0.0); // Terminar en la parte superior
+          const end = Offset(0.0, 0.0);
 
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -81,7 +81,9 @@ class HomePageState extends ConsumerState<HomePage>
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 25.0, vertical: 25.0),
+                    horizontal: 25.0,
+                    vertical: 25.0,
+                  ),
                   child: Text(
                     'Timeline',
                     textAlign: TextAlign.center,
@@ -129,7 +131,8 @@ class HomePageState extends ConsumerState<HomePage>
           ),
           AnimatedPositioned(
             duration: const Duration(
-                milliseconds: 500), // Ajusta la duración de la animación
+              milliseconds: 500,
+            ),
             curve: Curves.easeOut,
             top: isExpanded ? -20 : size.height / 3.5,
             left: 0,
