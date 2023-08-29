@@ -5,6 +5,7 @@ class Car {
   final String name;
   final String mainImage;
   final String logo;
+  final String subtitle;
 
   Car({
     required this.id,
@@ -13,5 +14,6 @@ class Car {
     required this.name,
     required this.mainImage,
     required this.logo,
+    required this.subtitle,
   });
 }

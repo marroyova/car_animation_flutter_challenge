@@ -8,6 +8,7 @@ List<Car> listCar = [
     name: 'Chevrolet Corvette C1',
     mainImage: 'images/Corvette1953-62.png',
     logo: 'images/logo1953-62.png',
+    subtitle: 'The first generation Corvette',
   ),
   Car(
     id: 1,
@@ -16,6 +17,7 @@ List<Car> listCar = [
     name: 'Chevrolet Corvette C2',
     mainImage: 'images/Corvette1963-67.png',
     logo: 'images/logo1963-67.png',
+    subtitle: 'The second generation Corvette',
   ),
   Car(
     id: 2,
@@ -24,6 +26,7 @@ List<Car> listCar = [
     name: 'Chevrolet Corvette C3',
     mainImage: 'images/Corvette1968-82.png',
     logo: 'images/logo1968-82.png',
+    subtitle: 'The third generation Corvette',
   ),
   Car(
     id: 3,
@@ -32,6 +35,7 @@ List<Car> listCar = [
     name: 'Chevrolet Corvette C4',
     mainImage: 'images/Corvette1983-96.png',
     logo: 'images/logo1983-96.png',
+    subtitle: 'The fourth generation Corvette',
   ),
   Car(
     id: 4,
@@ -40,6 +44,7 @@ List<Car> listCar = [
     name: 'Chevrolet Corvette C5',
     mainImage: 'images/Corvette1997-04.png',
     logo: 'images/logo1997-04.png',
+    subtitle: 'The fifth generation Corvette',
   ),
   Car(
     id: 5,
@@ -48,6 +53,7 @@ List<Car> listCar = [
     name: 'Chevrolet Corvette C6',
     mainImage: 'images/Corvette2005-13.png',
     logo: 'images/logo2005-13.png',
+    subtitle: 'The sixth generation Corvette',
   ),
   Car(
     id: 6,
@@ -56,6 +62,7 @@ List<Car> listCar = [
     name: 'Chevrolet Corvette C7',
     mainImage: 'images/Corvette2014-19.png',
     logo: 'images/logo2014-19.png',
+    subtitle: 'The seventh generation Corvette',
   ),
   Car(
     id: 7,
@@ -64,5 +71,6 @@ List<Car> listCar = [
     name: 'Chevrolet Corvette C8',
     mainImage: 'images/Corvette2020-23.png',
     logo: 'images/logo2020-23.png',
+    subtitle: 'The eighth generation Corvette',
   ),
 ];

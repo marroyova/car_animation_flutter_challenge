@@ -18,6 +18,7 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
   late AnimationController controller;
   late Animation<double> scaleAnimation;
   late Animation<double> rightAnimation;
+  late Animation<double> traslateAnimation;
 
   @override
   void initState() {
@@ -25,12 +26,18 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
 
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 1500),
       reverseDuration: const Duration(milliseconds: 500),
     );
 
     scaleAnimation = Tween<double>(begin: 1.0, end: 1.3).animate(controller);
     rightAnimation = Tween<double>(begin: 0.0, end: 100.0).animate(controller);
+    traslateAnimation = Tween<double>(begin: 200.0, end: 0.0).animate(
+      CurvedAnimation(
+        parent: controller,
+        curve: const Interval(0.5, 1.0, curve: Curves.decelerate),
+      ),
+    );
 
     controller.forward();
   }
@@ -49,10 +56,10 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
     return Scaffold(
       body: GestureDetector(
         onTap: () {
-          controller.reverse();
-
-          Navigator.pop(context);
-          ref.read(expandedCardProvider.notifier).update((state) => !state);
+          controller.reverse().then((_) {
+            Navigator.pop(context);
+            ref.read(expandedCardProvider.notifier).update((state) => !state);
+          });
         },
         child: AnimatedBuilder(
           animation: controller,
@@ -151,6 +158,76 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
                         color: textColor,
                         fontSize: 50.0,
                         fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Expanded(child: SizedBox(height: 50.0)),
+                    Expanded(
+                      child: Transform.translate(
+                        offset: Offset(0.0, traslateAnimation.value),
+                        child: Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Production',
+                                      style: GoogleFonts.gelasio(
+                                        color: textColor,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      "${widget.car.year}-${widget.car.yearUntil}",
+                                      style: GoogleFonts.gelasio(
+                                        color: textColor,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Class',
+                                      style: GoogleFonts.gelasio(
+                                        color: textColor,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Sportcars',
+                                      style: GoogleFonts.gelasio(
+                                        color: textColor,
+                                        fontSize: 14.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const Divider(),
+                            Expanded(
+                              child: Center(
+                                child: Text(
+                                  widget.car.subtitle,
+                                  style: GoogleFonts.gelasio(
+                                    color: textColor,
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
