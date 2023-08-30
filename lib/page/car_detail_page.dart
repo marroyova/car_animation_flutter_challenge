@@ -30,8 +30,12 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
       reverseDuration: const Duration(milliseconds: 500),
     );
 
-    scaleAnimation = Tween<double>(begin: 1.0, end: 1.3).animate(controller);
-    rightAnimation = Tween<double>(begin: 0.0, end: 100.0).animate(controller);
+    scaleAnimation = Tween<double>(begin: 1.0, end: 1.3).animate(
+      CurvedAnimation(parent: controller, curve: Curves.easeInOut),
+    );
+    rightAnimation = Tween<double>(begin: 0.0, end: 100.0).animate(
+      CurvedAnimation(parent: controller, curve: Curves.easeInOut),
+    );
     traslateAnimation = Tween<double>(begin: 200.0, end: 0.0).animate(
       CurvedAnimation(
         parent: controller,
