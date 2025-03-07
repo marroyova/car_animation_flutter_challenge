@@ -55,7 +55,7 @@ class CarCardWidget extends StatelessWidget {
                     foreground: Paint()
                       ..style = PaintingStyle.stroke
                       ..strokeWidth = 1.0
-                      ..color = Colors.white.withOpacity(0.3),
+                      ..color = Colors.white.withAlpha(77),
                   ),
                 ),
               ],
@@ -88,6 +88,8 @@ class CarCardWidget extends StatelessWidget {
               child: Image(
                 image: AssetImage(car.logo),
                 fit: BoxFit.cover,
+                height: 75.0,
+                width: 75.0,
               ),
             ),
             //const SizedBox(height: 25.0),

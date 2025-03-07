@@ -114,7 +114,7 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
                             foreground: Paint()
                               ..style = PaintingStyle.stroke
                               ..strokeWidth = 1.0
-                              ..color = textColor!.withOpacity(0.3),
+                              ..color = textColor!.withAlpha(77),
                           ),
                         ),
                       ],
@@ -154,6 +154,8 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
                       child: Image(
                         image: AssetImage(widget.car.logo),
                         fit: BoxFit.cover,
+                        height: 75.0,
+                        width: 75.0,
                       ),
                     ),
                     Text(

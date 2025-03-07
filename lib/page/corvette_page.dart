@@ -9,14 +9,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'car_detail_page.dart';
 
-class HomePage extends ConsumerStatefulWidget {
-  const HomePage({super.key});
+class CorvettePage extends ConsumerStatefulWidget {
+  const CorvettePage({super.key});
 
   @override
-  HomePageState createState() => HomePageState();
+  CorvettePageState createState() => CorvettePageState();
 }
 
-class HomePageState extends ConsumerState<HomePage>
+class CorvettePageState extends ConsumerState<CorvettePage>
     with SingleTickerProviderStateMixin {
   late SwiperController swiperController;
 
@@ -38,7 +38,7 @@ class HomePageState extends ConsumerState<HomePage>
         },
         transitionsBuilder: (BuildContext context, Animation<double> animation,
             Animation<double> secondaryAnimation, Widget child) {
-          final begin = Offset(0.0, MediaQuery.of(context).size.height / 3.5);
+          final begin = Offset(0.0, MediaQuery.of(context).size.height / 1.0);
           const end = Offset(0.0, 0.0);
 
           final tween = Tween(begin: begin, end: end);
@@ -49,7 +49,7 @@ class HomePageState extends ConsumerState<HomePage>
             child: child,
           );
         },
-        transitionDuration: const Duration(milliseconds: 500),
+        transitionDuration: const Duration(milliseconds: 350),
       ),
     );
   }
@@ -131,7 +131,7 @@ class HomePageState extends ConsumerState<HomePage>
           ),
           AnimatedPositioned(
             duration: const Duration(
-              milliseconds: 500,
+              milliseconds: 350,
             ),
             curve: Curves.easeOut,
             top: isExpanded ? -20 : size.height / 3.5,

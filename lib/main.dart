@@ -1,4 +1,4 @@
-import 'package:car_animation_challenge/page/home_page.dart';
+import 'package:car_animation_challenge/page/corvette_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
         title: 'Car Animation Flutter Challenge',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
           useMaterial3: true,
         ),
-        home: const HomePage(),
+        home: const CorvettePage(),
       ),
     );
   }
