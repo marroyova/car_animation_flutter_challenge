@@ -67,7 +67,7 @@ class CorvettePageState extends ConsumerState<CorvettePage>
 
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFE9E9E9),
       body: Stack(
         children: [
           AnimatedPositioned(
@@ -114,7 +114,7 @@ class CorvettePageState extends ConsumerState<CorvettePage>
                                   fontWeight: FontWeight.bold,
                                 )
                               : GoogleFonts.aleo(
-                                  backgroundColor: Colors.white,
+                                  backgroundColor: Color(0xFFE9E9E9),
                                   fontSize: 50.0,
                                   foreground: Paint()
                                     ..style = PaintingStyle.stroke
@@ -154,7 +154,31 @@ class CorvettePageState extends ConsumerState<CorvettePage>
               fade: 1.0,
               onIndexChanged: (value) => changeIndexCard(value),
               itemBuilder: (BuildContext context, int index) {
-                return CarCardWidget(car: listCar[index]);
+                return Column(
+                  children: [
+                    Container(
+                      width: size.width / 1.2,
+                      height: 10.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0)),
+                        color: Color(0xFFE5D1D1),
+                      ),
+                    ),
+                    Container(
+                      width: size.width / 1.1,
+                      height: 10.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0)),
+                        color: Color(0xFFCCBABA),
+                      ),
+                    ),
+                    Expanded(child: CarCardWidget(car: listCar[index])),
+                  ],
+                );
               },
             ),
           ),

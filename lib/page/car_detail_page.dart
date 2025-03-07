@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,13 +35,13 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
     scaleAnimation = Tween<double>(begin: 1.0, end: 1.3).animate(
       CurvedAnimation(parent: controller, curve: Curves.easeInOut),
     );
-    rightAnimation = Tween<double>(begin: 0.0, end: 100.0).animate(
+    rightAnimation = Tween<double>(begin: 0.0, end: 130.0).animate(
       CurvedAnimation(parent: controller, curve: Curves.easeInOut),
     );
     traslateAnimation = Tween<double>(begin: 200.0, end: 0.0).animate(
       CurvedAnimation(
         parent: controller,
-        curve: const Interval(0.5, 1.0, curve: Curves.decelerate),
+        curve: const Interval(0.1, 1.0, curve: Curves.decelerate),
       ),
     );
 
@@ -71,12 +73,23 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
             return Container(
               width: size.width,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: const [Colors.white, Colors.black],
-                  stops: [controller.value, controller.value],
+                gradient: RadialGradient(
+                  center: Alignment.bottomCenter,
+                  radius: 0.1 + (2.4 * controller.value),
+                  colors: [Colors.white, Colors.black],
+                  stops: [
+                    0.1 +
+                        pow((controller.value * 0.9).clamp(0.0, 1.0), 5.0)
+                            .toDouble(),
+                    controller.value,
+                  ],
                 ),
+                // LinearGradient(
+                //   begin: Alignment.bottomCenter,
+                //   end: Alignment.topCenter,
+                //   colors: const [Color(0xFFE9E9E9), Colors.black],
+                //   stops: [controller.value, controller.value],
+                // ),
               ),
               //child: child,
               child: Padding(
@@ -172,6 +185,8 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
                         offset: Offset(0.0, traslateAnimation.value),
                         child: Column(
                           children: [
+                            const Divider(color: Color(0xFFE9E9E9)),
+                            const SizedBox(height: 20.0),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -220,6 +235,7 @@ class CarCardWidgetState extends ConsumerState<CarDetailPage>
                                 ),
                               ],
                             ),
+                            const SizedBox(height: 20.0),
                             const Divider(),
                             Expanded(
                               child: Center(
